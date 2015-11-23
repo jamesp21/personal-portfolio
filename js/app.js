@@ -26,12 +26,14 @@ myApp.config(function($stateProvider) {
 
 // About page controller: define $scope.about as a string
 .controller('aboutController', function($scope){
-  $scope.url = "/img/me-1.jpg"
+  $scope.url = "img/me-1.jpg"
 })
 
 // Content controller: define $scope.url as an image
 .controller('projectsController', function($scope, $http){
-$scope.url = "http://globe-views.com/dcim/dreams/storm/storm-02.jpg"
-var file = "/json/data.json"
-$http.get(file)
+	$scope.url = "http://globe-views.com/dcim/dreams/storm/storm-02.jpg"
+	var file = "json/data.json"
+	$http.get(file).success(function(response){
+	  data = $scope.rows = response
+	})
 })

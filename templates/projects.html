@@ -1,5 +1,6 @@
-Projects
-
-<li ng-repeat="row in rows" class="">
-  <p>{{row.title + " " + row.url + " " + row.description}}
-</li>
+<h1>PROJECTS</h1>
+<ul ng-repeat="row in rows" class="">
+  <h2>{{row.title}}</h2>
+  <a href="http://www.{{row.url}}">{{row.url}}</a>
+  <p>{{row.description}}</p>
+</ul>
